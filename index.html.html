@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Kheir Sureste - Distribuidor oficial del fertilizante líquido orgánico CE1300 Kheir en Quintana Roo, Yucatán, Campeche, Tabasco, Veracruz y Oaxaca.">
+<title>Kheir Sureste | Fertilizante Líquido Orgánico</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --v1: #0d1f10;
+  --v2: #1a3a1f;
+  --v3: #2d6a35;
+  --v4: #4a9e55;
+  --lima: #7ec850;
+  --crema: #f5f0e8;
+  --crema2: #ede7d9;
+  --blanco: #ffffff;
+  --dorado: #c8a84b;
+  --texto: #1a1a1a;
+  --gris: #666;
+  --wa: #25D366;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--crema);color:var(--texto);overflow-x:hidden;}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:6px;}
+::-webkit-scrollbar-track{background:var(--v1);}
+::-webkit-scrollbar-thumb{background:var(--lima);border-radius:3px;}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 60px;height:72px;
+  background:rgba(13,31,16,0.97);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(126,200,80,0.15);
+  transition:all .3s;
+}
+.nav-left{display:flex;align-items:center;gap:16px;}
+.nav-logo-img{height:36px;filter:brightness(0) invert(1);}
+.nav-brand-name{
+  font-family:'Playfair Display',serif;
+  font-size:17px;color:var(--blanco);line-height:1.1;
+}
+.nav-brand-sub{
+  font-size:9px;color:var(--lima);
+  letter-spacing:2.5px;text-transform:uppercase;
+  font-family:'DM Sans',sans-serif;font-weight:600;
+}
+.nav-links{display:flex;gap:32px;list-style:none;}
+.nav-links a{
+  color:rgba(255,255,255,.7);text-decoration:none;
+  font-size:13px;font-weight:500;letter-spacing:.5px;
+  transition:color .3s;
+}
+.nav-links a:hover{color:var(--lima);}
+.nav-cta{
+  background:var(--lima)!important;color:var(--v1)!important;
+  padding:10px 24px;border-radius:50px;
+  font-weight:700!important;font-size:13px!important;
+  transition:all .3s!important;
+}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(126,200,80,.4)!important;}
+.nav-wa{
+  display:flex;align-items:center;gap:8px;
+  background:var(--wa);color:white!important;
+  padding:10px 20px;border-radius:50px;
+  font-weight:600!important;font-size:13px!important;
+  text-decoration:none;transition:all .3s;
+}
+.nav-wa:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(37,211,102,.4);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:5px;}
+.hamburger span{display:block;width:24px;height:2px;background:white;border-radius:2px;transition:all .3s;}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;
+  background:linear-gradient(160deg, var(--v1) 0%, #0a1a0c 40%, #162d1a 100%);
+  display:grid;grid-template-columns:1fr 1fr;
+  align-items:center;padding:110px 60px 80px;
+  position:relative;overflow:hidden;
+}
+.hero-bg-circle{
+  position:absolute;top:-200px;right:-200px;
+  width:700px;height:700px;border-radius:50%;
+  background:radial-gradient(circle,rgba(126,200,80,.08) 0%,transparent 65%);
+  animation:breathe 8s ease-in-out infinite;
+}
+.hero-bg-circle2{
+  position:absolute;bottom:-300px;left:-200px;
+  width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(45,106,53,.2) 0%,transparent 65%);
+  animation:breathe 10s ease-in-out infinite reverse;
+}
+.hero-grid-lines{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(126,200,80,.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(126,200,80,.03) 1px,transparent 1px);
+  background-size:60px 60px;
+}
+@keyframes breathe{0%,100%{transform:scale(1);}50%{transform:scale(1.08);}}
+
+.hero-content{position:relative;z-index:2;}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(126,200,80,.1);border:1px solid rgba(126,200,80,.3);
+  color:var(--lima);padding:9px 20px;border-radius:50px;
+  font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  margin-bottom:28px;
+}
+.badge-dot{
+  width:8px;height:8px;background:var(--lima);border-radius:50%;
+  animation:pulsedot 2s infinite;
+}
+@keyframes pulsedot{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(1.4);}}
+
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(44px,5.5vw,72px);
+  color:var(--blanco);line-height:1.05;
+  margin-bottom:16px;
+}
+.hero h1 em{font-style:italic;color:var(--lima);}
+.hero-eyebrow{
+  font-size:11px;color:rgba(255,255,255,.45);
+  letter-spacing:4px;text-transform:uppercase;
+  font-weight:600;margin-bottom:16px;display:block;
+}
+.hero-desc{
+  font-size:17px;color:rgba(255,255,255,.65);
+  line-height:1.75;max-width:480px;margin-bottom:36px;
+}
+.hero-estados{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px;}
+.etag{
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);
+  color:rgba(255,255,255,.65);padding:6px 14px;border-radius:50px;
+  font-size:11px;font-weight:500;
+}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-p{
+  background:var(--lima);color:var(--v1);
+  padding:15px 32px;border-radius:50px;font-weight:700;
+  font-size:15px;text-decoration:none;display:inline-flex;
+  align-items:center;gap:10px;
+  box-shadow:0 8px 32px rgba(126,200,80,.3);
+  transition:all .3s;
+}
+.btn-p:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(126,200,80,.45);}
+.btn-s{
+  background:transparent;color:var(--blanco);
+  padding:15px 32px;border-radius:50px;font-weight:500;
+  font-size:15px;text-decoration:none;
+  border:1px solid rgba(255,255,255,.25);transition:all .3s;
+}
+.btn-s:hover{border-color:var(--lima);color:var(--lima);}
+
+/* Hero image */
+.hero-visual{
+  display:flex;justify-content:center;align-items:center;
+  position:relative;z-index:2;
+}
+.hero-ring{
+  width:380px;height:380px;border-radius:50%;
+  border:1px solid rgba(126,200,80,.15);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;animation:floatup 7s ease-in-out infinite;
+  background:radial-gradient(circle at 40% 40%,rgba(126,200,80,.08),transparent 60%);
+}
+.hero-ring::before{
+  content:'';position:absolute;inset:25px;border-radius:50%;
+  border:1px dashed rgba(126,200,80,.12);
+  animation:spin 30s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg);}}
+@keyframes floatup{0%,100%{transform:translateY(0);}50%{transform:translateY(-18px);}}
+.hero-ring img{width:250px;filter:drop-shadow(0 20px 60px rgba(0,0,0,.5));}
+.hero-stat{
+  position:absolute;
+  background:rgba(255,255,255,.07);backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.15);border-radius:16px;
+  padding:14px 18px;color:white;
+}
+.hero-stat strong{display:block;font-family:'Playfair Display',serif;font-size:28px;color:var(--lima);}
+.hero-stat span{font-size:10px;opacity:.6;text-transform:uppercase;letter-spacing:1px;}
+.hs1{top:30px;left:-20px;}
+.hs2{bottom:50px;right:-10px;}
+.hs3{top:50%;left:-40px;transform:translateY(-50%);}
+
+/* ── STRIP ── */
+.strip{
+  background:var(--v2);padding:22px 60px;
+  display:flex;align-items:center;justify-content:center;gap:50px;
+  border-top:1px solid rgba(126,200,80,.12);
+  border-bottom:1px solid rgba(126,200,80,.12);
+  flex-wrap:wrap;
+}
+.strip-item{
+  display:flex;align-items:center;gap:10px;
+  color:rgba(255,255,255,.55);font-size:13px;
+}
+.strip-item svg{flex-shrink:0;}
+
+/* ── SECCIONES ── */
+.section{padding:100px 60px;}
+.sec-label{
+  font-size:10px;font-weight:700;letter-spacing:3px;
+  text-transform:uppercase;color:var(--v3);margin-bottom:14px;
+}
+.sec-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(30px,4vw,50px);
+  color:var(--v2);line-height:1.15;margin-bottom:18px;
+}
+.sec-desc{
+  font-size:16px;color:var(--gris);
+  line-height:1.75;max-width:560px;margin-bottom:56px;
+}
+
+/* ── CLIENTES ── */
+.clientes-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
+.ccard{
+  background:var(--blanco);border-radius:24px;padding:38px 36px;
+  border:1px solid rgba(0,0,0,.06);position:relative;overflow:hidden;
+  transition:all .4s;cursor:default;
+}
+.ccard::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--v4),var(--lima));
+  transform:scaleX(0);transform-origin:left;transition:transform .4s;
+}
+.ccard:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.09);}
+.ccard:hover::before{transform:scaleX(1);}
+.ccard-icon{font-size:38px;margin-bottom:18px;}
+.ccard h3{font-family:'Playfair Display',serif;font-size:22px;color:var(--v2);margin-bottom:12px;}
+.ccard p{color:var(--gris);font-size:15px;line-height:1.65;}
+
+/* ── PRODUCTO ── */
+.producto-sec{
+  background:linear-gradient(150deg,var(--v1) 0%,#0a1a0c 100%);
+  padding:100px 60px;display:grid;
+  grid-template-columns:1fr 1fr;gap:80px;align-items:center;
+}
+.producto-sec .sec-label{color:var(--lima);}
+.producto-sec .sec-title{color:var(--blanco);}
+.producto-sec .sec-desc{color:rgba(255,255,255,.6);margin-bottom:36px;}
+.blist{list-style:none;display:flex;flex-direction:column;gap:14px;margin-bottom:40px;}
+.bitem{display:flex;align-items:flex-start;gap:14px;color:rgba(255,255,255,.8);font-size:15px;line-height:1.5;}
+.bcheck{
+  width:26px;height:26px;background:rgba(126,200,80,.15);
+  border:1px solid var(--lima);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;margin-top:1px;color:var(--lima);font-size:13px;
+}
+.pres-row{display:flex;gap:14px;}
+.pres{
+  flex:1;background:rgba(255,255,255,.06);
+  border:1px solid rgba(126,200,80,.2);border-radius:16px;
+  padding:22px;text-align:center;color:white;
+  transition:all .3s;
+}
+.pres:hover{background:rgba(126,200,80,.1);border-color:var(--lima);}
+.pres strong{display:block;font-family:'Playfair Display',serif;font-size:26px;color:var(--lima);margin-bottom:4px;}
+.pres span{font-size:11px;opacity:.55;text-transform:uppercase;letter-spacing:1px;}
+
+.prod-visual{display:flex;justify-content:center;position:relative;}
+.prod-glow{
+  width:380px;height:380px;border-radius:50%;
+  background:radial-gradient(circle,rgba(126,200,80,.12) 0%,transparent 65%);
+  display:flex;align-items:center;justify-content:center;position:relative;
+}
+.prod-glow::before{
+  content:'';position:absolute;inset:20px;border-radius:50%;
+  border:1px solid rgba(126,200,80,.1);
+}
+.prod-glow img{width:280px;filter:drop-shadow(0 25px 50px rgba(0,0,0,.6));}
+
+/* ── PROPIEDADES ── */
+.props-sec{padding:100px 60px;background:var(--crema);}
+.props-header{text-align:center;margin-bottom:64px;}
+.props-header .sec-desc{margin:0 auto;}
+.props-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.prop{
+  background:var(--blanco);border-radius:20px;padding:36px 30px;
+  text-align:center;border:1px solid rgba(0,0,0,.06);
+  transition:all .35s;
+}
+.prop:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(0,0,0,.08);}
+.prop-icon{
+  width:68px;height:68px;margin:0 auto 20px;border-radius:50%;
+  background:linear-gradient(135deg,rgba(74,158,85,.15),rgba(126,200,80,.08));
+  display:flex;align-items:center;justify-content:center;font-size:28px;
+}
+.prop h4{font-family:'Playfair Display',serif;font-size:20px;color:var(--v2);margin-bottom:12px;}
+.prop p{color:var(--gris);font-size:14px;line-height:1.65;}
+
+/* ── STATS ── */
+.stats{
+  background:var(--v2);padding:72px 60px;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:40px;text-align:center;
+}
+.stat strong{
+  display:block;font-family:'Playfair Display',serif;
+  font-size:52px;color:var(--lima);line-height:1;margin-bottom:8px;
+}
+.stat p{color:rgba(255,255,255,.5);font-size:11px;text-transform:uppercase;letter-spacing:2px;}
+
+/* ── APLICACIÓN ── */
+.aplic-sec{padding:100px 60px;background:var(--blanco);}
+.aplic-header{text-align:center;margin-bottom:60px;}
+.aplic-header .sec-desc{margin:0 auto;}
+.aplic-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+.aplic-card{
+  background:var(--crema);border-radius:24px;padding:44px 38px;
+  border:1px solid rgba(0,0,0,.05);transition:all .3s;
+}
+.aplic-card:hover{box-shadow:0 12px 30px rgba(0,0,0,.07);transform:translateY(-3px);}
+.aplic-num{
+  font-family:'Playfair Display',serif;font-size:60px;
+  color:rgba(74,158,85,.15);line-height:1;margin-bottom:-8px;
+}
+.aplic-card h3{font-family:'Playfair Display',serif;font-size:24px;color:var(--v2);margin-bottom:12px;}
+.aplic-card p{color:var(--gris);font-size:15px;line-height:1.7;}
+
+/* ── COBERTURA ── */
+.cob-sec{
+  padding:100px 60px;text-align:center;
+  background:linear-gradient(135deg,#eef5e8 0%,#e5f0de 100%);
+}
+.cob-sec .sec-desc{margin:0 auto;}
+.estados{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:50px;}
+.estado{
+  background:var(--blanco);border:2px solid rgba(74,158,85,.2);
+  border-radius:18px;padding:22px 36px;text-align:center;
+  transition:all .35s;cursor:default;
+}
+.estado:hover{background:var(--v3);border-color:var(--v3);transform:translateY(-4px);box-shadow:0 12px 30px rgba(45,106,53,.25);}
+.estado:hover .estado-name{color:white;}
+.estado:hover .estado-sub{color:rgba(255,255,255,.6);}
+.estado-sub{display:block;font-size:10px;color:var(--gris);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;}
+.estado-name{font-family:'Playfair Display',serif;font-size:18px;color:var(--v2);transition:color .35s;}
+
+/* ── PRECIOS ── */
+.precios-sec{padding:100px 60px;background:var(--crema);}
+.precios-header{text-align:center;margin-bottom:60px;}
+.precios-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:800px;margin:0 auto;}
+.precio-card{
+  background:var(--blanco);border-radius:24px;padding:36px;
+  border:2px solid rgba(0,0,0,.06);text-align:center;transition:all .3s;
+}
+.precio-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.09);}
+.precio-card.featured{
+  background:var(--v2);border-color:var(--lima);
+}
+.precio-card.featured .precio-titulo{color:rgba(255,255,255,.7);}
+.precio-card.featured .precio-monto{color:var(--lima);}
+.precio-card.featured .precio-desc{color:rgba(255,255,255,.5);}
+.precio-card.featured .precio-seg{color:rgba(255,255,255,.4);}
+.precio-titulo{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gris);margin-bottom:16px;}
+.precio-monto{font-family:'Playfair Display',serif;font-size:48px;color:var(--v2);line-height:1;}
+.precio-monto sup{font-size:20px;vertical-align:top;margin-top:10px;display:inline-block;}
+.precio-seg{font-size:13px;color:var(--gris);margin-top:4px;}
+.precio-desc{color:var(--gris);font-size:14px;margin-top:16px;line-height:1.5;}
+
+/* ── CTA ── */
+.cta-sec{
+  background:linear-gradient(150deg,var(--v1),#0a1a0c);
+  padding:100px 60px;text-align:center;position:relative;overflow:hidden;
+}
+.cta-sec::before{
+  content:'';position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(126,200,80,.07) 0%,transparent 65%);
+}
+.cta-sec h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(30px,4vw,52px);color:var(--blanco);
+  margin-bottom:18px;position:relative;
+}
+.cta-sec p{color:rgba(255,255,255,.55);font-size:18px;margin-bottom:48px;position:relative;}
+.cta-btns{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;position:relative;}
+.btn-wa{
+  background:var(--wa);color:white;padding:18px 40px;border-radius:50px;
+  font-weight:700;font-size:16px;text-decoration:none;
+  display:inline-flex;align-items:center;gap:12px;transition:all .3s;
+  box-shadow:0 8px 30px rgba(37,211,102,.25);
+}
+.btn-wa:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(37,211,102,.4);}
+.btn-outline{
+  background:transparent;color:white;padding:18px 40px;border-radius:50px;
+  font-weight:500;font-size:16px;text-decoration:none;
+  border:1px solid rgba(255,255,255,.25);transition:all .3s;
+}
+.btn-outline:hover{border-color:var(--lima);color:var(--lima);}
+
+/* ── CONTACTO ── */
+.contacto-sec{
+  padding:100px 60px;background:var(--crema);
+  display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;
+}
+.contacto-info h2{font-family:'Playfair Display',serif;font-size:40px;color:var(--v2);margin-bottom:18px;}
+.contacto-info p{color:var(--gris);font-size:16px;line-height:1.75;margin-bottom:36px;}
+.datos{display:flex;flex-direction:column;gap:18px;}
+.dato{display:flex;align-items:center;gap:14px;color:var(--gris);font-size:15px;}
+.dato-icon{
+  width:44px;height:44px;background:var(--v3);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;
+}
+.dato strong{display:block;color:var(--v2);font-weight:600;margin-bottom:2px;}
+
+.form-box{
+  background:var(--blanco);border-radius:24px;padding:44px 38px;
+  border:1px solid rgba(0,0,0,.06);
+}
+.form-box h3{font-family:'Playfair Display',serif;font-size:26px;color:var(--v2);margin-bottom:28px;}
+.fg{margin-bottom:18px;}
+.fg label{display:block;font-size:12px;font-weight:700;color:var(--gris);text-transform:uppercase;letter-spacing:1px;margin-bottom:7px;}
+.fg input,.fg select,.fg textarea{
+  width:100%;padding:13px 16px;
+  border:1.5px solid rgba(0,0,0,.1);border-radius:12px;
+  font-family:'DM Sans',sans-serif;font-size:15px;color:var(--texto);
+  background:var(--crema);outline:none;transition:border-color .3s;
+}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--v3);}
+.fg textarea{resize:vertical;min-height:90px;}
+.btn-form{
+  width:100%;background:var(--v2);color:white;
+  padding:15px;border-radius:12px;border:none;
+  font-family:'DM Sans',sans-serif;font-size:16px;font-weight:600;
+  cursor:pointer;transition:all .3s;margin-top:6px;
+}
+.btn-form:hover{background:var(--v3);transform:translateY(-2px);}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--v1);padding:64px 60px;
+  display:grid;grid-template-columns:2fr 1fr 1fr;gap:60px;
+  border-top:1px solid rgba(126,200,80,.1);
+}
+.footer-brand p{color:rgba(255,255,255,.35);font-size:14px;line-height:1.65;max-width:280px;margin-top:14px;}
+.footer-logo{height:38px;filter:brightness(0) invert(1);opacity:.8;}
+.fcol h4{color:var(--lima);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:18px;}
+.fcol ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.fcol ul li a{color:rgba(255,255,255,.45);text-decoration:none;font-size:14px;transition:color .3s;}
+.fcol ul li a:hover{color:var(--lima);}
+.footer-bottom{
+  background:#080f09;padding:22px 60px;
+  display:flex;justify-content:space-between;align-items:center;
+  border-top:1px solid rgba(255,255,255,.04);
+}
+.footer-bottom p{color:rgba(255,255,255,.2);font-size:12px;}
+.footer-bottom span{color:var(--lima);}
+
+/* ── WA FLOTANTE ── */
+.wa-float{
+  position:fixed;bottom:28px;right:28px;z-index:999;
+  width:58px;height:58px;background:var(--wa);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 24px rgba(37,211,102,.4);
+  text-decoration:none;transition:all .3s;
+  animation:wapulse 3s infinite;
+}
+.wa-float:hover{transform:scale(1.1);box-shadow:0 10px 30px rgba(37,211,102,.5);}
+.wa-float svg{width:28px;height:28px;fill:white;}
+@keyframes wapulse{
+  0%,100%{box-shadow:0 6px 24px rgba(37,211,102,.4);}
+  50%{box-shadow:0 6px 40px rgba(37,211,102,.7);}
+}
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  nav{padding:0 24px;}
+  .nav-links{display:none;}
+  .hamburger{display:flex;}
+  .hero{grid-template-columns:1fr;padding:90px 24px 60px;}
+  .hero-visual{display:none;}
+  .producto-sec{grid-template-columns:1fr;padding:70px 24px;}
+  .prod-visual{display:none;}
+  .clientes-grid,.props-grid,.aplic-grid,.precios-grid{grid-template-columns:1fr;}
+  .stats{grid-template-columns:repeat(2,1fr);padding:60px 24px;}
+  .section,.props-sec,.aplic-sec,.cob-sec,.precios-sec,.cta-sec{padding:70px 24px;}
+  .contacto-sec{grid-template-columns:1fr;padding:70px 24px;gap:40px;}
+  footer{grid-template-columns:1fr;padding:48px 24px;gap:36px;}
+  .footer-bottom{padding:18px 24px;flex-direction:column;gap:6px;text-align:center;}
+  .strip{padding:20px 24px;gap:20px;}
+}
+</style>
+</head>
+<body>
+
+<!-- WA FLOTANTE -->
+<a href="https://wa.me/529982418876?text=Hola%2C%20me%20interesa%20información%20sobre%20Kheir%20Sureste%20🌱" target="_blank" class="wa-float" title="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-left">
+    <img src="https://kheir.mx/wp-content/uploads/2020/02/Logo-Kheir-V2.webp" alt="Kheir" class="nav-logo-img">
+    <div>
+      <div class="nav-brand-name">Kheir Sureste</div>
+      <div class="nav-brand-sub">Distribuidor Oficial</div>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#producto">El Producto</a></li>
+    <li><a href="#clientes">Clientes</a></li>
+    <li><a href="#cobertura">Cobertura</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+    <li><a href="https://wa.me/529982418876?text=Hola%2C%20quiero%20cotizar%20Kheir%20Sureste%20🌱" target="_blank" class="nav-wa">
+      💬 WhatsApp
+    </a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-circle"></div>
+  <div class="hero-bg-circle2"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><span class="badge-dot"></span>Distribuidor Oficial · Sureste México</div>
+    <span class="hero-eyebrow">CE1300 · Fertilizante Líquido Orgánico</span>
+    <h1>Más vida<br>para tus<br><em>plantas.</em></h1>
+    <p class="hero-desc">Somos distribuidores exclusivos de Kheir CE1300® en el sureste de México. Biofertilizante 100% orgánico con más de 25 años de resultados comprobados en todo el país.</p>
+    <div class="hero-estados">
+      <span class="etag">🌴 Quintana Roo</span>
+      <span class="etag">🏛️ Yucatán</span>
+      <span class="etag">🌊 Campeche</span>
+      <span class="etag">🌿 Tabasco</span>
+      <span class="etag">🌋 Veracruz</span>
+      <span class="etag">🏔️ Oaxaca</span>
+    </div>
+    <div class="hero-btns">
+      <a href="https://wa.me/529982418876?text=Hola%2C%20quiero%20cotizar%20Kheir%20Sureste%20🌱" target="_blank" class="btn-p">💬 Cotizar por WhatsApp</a>
+      <a href="#producto" class="btn-s">Ver el producto</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-ring">
+      <img src="https://kheir.mx/wp-content/uploads/2020/01/Contenedor.png" alt="CE1300 Kheir">
+      <div class="hero-stat hs1"><strong>25+</strong><span>Años en México</span></div>
+      <div class="hero-stat hs2"><strong>100%</strong><span>Orgánico</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="strip-item">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7ec850" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    100% Orgánico Certificado
+  </div>
+  <div class="strip-item">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7ec850" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+    25+ Años de Resultados
+  </div>
+  <div class="strip-item">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7ec850" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+    6 Estados con Cobertura
+  </div>
+  <div class="strip-item">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7ec850" stroke-width="2"><path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+    Presentaciones 20 · 50 · 1,000 L
+  </div>
+</div>
+
+<!-- CLIENTES -->
+<section class="section" id="clientes">
+  <p class="sec-label">¿Para quién es?</p>
+  <h2 class="sec-title">Kheir funciona para<br>cualquier tipo de planta</h2>
+  <p class="sec-desc">Desde grandes hoteles hasta pequeños productores — el resultado es el mismo: plantas más sanas, suelos más vivos y mayor producción.</p>
+  <div class="clientes-grid">
+    <div class="ccard">
+      <div class="ccard-icon">🏨</div>
+      <h3>Hoteles y Resorts</h3>
+      <p>Mantén jardines y áreas verdes impecables todo el año. Kheir fortalece las plantas frente al calor y la humedad del Caribe — sin químicos agresivos para tus huéspedes ni el entorno natural.</p>
+    </div>
+    <div class="ccard">
+      <div class="ccard-icon">🌱</div>
+      <h3>Viveros y Jardineros</h3>
+      <p>Más producción, plantas más sanas y menor uso de químicos. Mejora el desarrollo de raíces, favorece la floración y el amarre del fruto. Compatible con cualquier sistema de riego.</p>
+    </div>
+    <div class="ccard">
+      <div class="ccard-icon">🏗️</div>
+      <h3>Desarrollos Inmobiliarios</h3>
+      <p>Áreas verdes que impresionan desde el primer día. Ideal para fraccionamientos, condominios, cabañas y proyectos turísticos que necesitan vegetación abundante y bien cuidada.</p>
+    </div>
+    <div class="ccard">
+      <div class="ccard-icon">🌾</div>
+      <h3>Agricultores y Productores</h3>
+      <p>Mejora tu cosecha de forma natural. Regenera la fertilidad del suelo, aumenta la densidad radicular y protege tus cultivos frente a condiciones adversas del clima tropical.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTO -->
+<section class="producto-sec" id="producto">
+  <div>
+    <p class="sec-label">CE1300 KHÉIR®</p>
+    <h2 class="sec-title" style="color:white">El fertilizante<br>que sí funciona</h2>
+    <p class="sec-desc">Fórmula orgánica de origen animal y vegetal. Actúa desde la raíz mejorando la fotosíntesis, la absorción de nutrientes y la resistencia natural de cada planta.</p>
+    <ul class="blist">
+      <li class="bitem"><span class="bcheck">✓</span>Aumenta la densidad radicular y mejora absorción de nutrientes</li>
+      <li class="bitem"><span class="bcheck">✓</span>Favorece floración abundante y amarre máximo del fruto</li>
+      <li class="bitem"><span class="bcheck">✓</span>Protege la planta frente a calor, frío, hongos y bacterias</li>
+      <li class="bitem"><span class="bcheck">✓</span>Regenera la fertilidad natural del suelo a largo plazo</li>
+      <li class="bitem"><span class="bcheck">✓</span>Aplicación simple por riego radicular o aspersión foliar</li>
+      <li class="bitem"><span class="bcheck">✓</span>100% orgánico — sin residuos tóxicos ni riesgo ambiental</li>
+    </ul>
+    <div class="pres-row">
+      <div class="pres"><strong>20 L</strong><span>Presentación estándar</span></div>
+      <div class="pres"><strong>50 L</strong><span>Presentación media</span></div>
+      <div class="pres"><strong>1,000 L</strong><span>Industrial</span></div>
+    </div>
+  </div>
+  <div class="prod-visual">
+    <div class="prod-glow">
+      <img src="https://kheir.mx/wp-content/uploads/2020/01/Contenedor.png" alt="CE1300 Kheir">
+    </div>
+  </div>
+</section>
+
+<!-- PROPIEDADES -->
+<section class="props-sec">
+  <div class="props-header">
+    <p class="sec-label">Propiedades activas</p>
+    <h2 class="sec-title">¿Cómo actúa Kheir<br>en tus plantas?</h2>
+    <p class="sec-desc">Tres mecanismos que trabajan juntos para mejorar la salud y producción de cualquier cultivo o área verde.</p>
+  </div>
+  <div class="props-grid">
+    <div class="prop">
+      <div class="prop-icon">⚡</div>
+      <h4>Balance Electroquímico</h4>
+      <p>Mayor capacidad para transportar y asimilar nutrientes. Actúa como donante y receptor, incrementando el balance electroquímico de la planta desde la raíz.</p>
+    </div>
+    <div class="prop">
+      <div class="prop-icon">🛡️</div>
+      <h4>Bio-antioxidantes</h4>
+      <p>Compuestos que promueven las defensas naturales de la planta, reduciendo significativamente nematodos, ácaros, hongos y bacterias del suelo.</p>
+    </div>
+    <div class="prop">
+      <div class="prop-icon">🌿</div>
+      <h4>Bioestimulante</h4>
+      <p>Potente acción bioestimulante por microorganismos benéficos que activan y fortalecen la flora microbiana del suelo para resultados duraderos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><strong>25+</strong><p>Años en el mercado</p></div>
+  <div class="stat"><strong>6</strong><p>Estados con cobertura</p></div>
+  <div class="stat"><strong>100%</strong><p>Orgánico certificado</p></div>
+  <div class="stat"><strong>3</strong><p>Presentaciones disponibles</p></div>
+</div>
+
+<!-- APLICACIÓN -->
+<section class="aplic-sec" id="aplicacion">
+  <div class="aplic-header">
+    <p class="sec-label">Modo de uso</p>
+    <h2 class="sec-title">Dos formas de aplicación</h2>
+    <p class="sec-desc">Simple, flexible y compatible con cualquier sistema de riego existente.</p>
+  </div>
+  <div class="aplic-grid">
+    <div class="aplic-card">
+      <div class="aplic-num">01</div>
+      <h3>Aplicación Radicular</h3>
+      <p>Se aplica directamente en el sistema de riego — por goteo, gravedad o cualquier método existente. Los nutrientes llegan a la raíz de forma rápida y eficiente, estimulando el crecimiento desde la base de la planta.</p>
+    </div>
+    <div class="aplic-card">
+      <div class="aplic-num">02</div>
+      <h3>Aplicación Foliar</h3>
+      <p>Se aplica mediante aspersión directa sobre el follaje. Los nutrientes se absorben por las hojas y el efecto es visible con mayor rapidez. Ideal cuando se necesita una respuesta rápida de la planta ante condiciones de estrés.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COBERTURA -->
+<section class="cob-sec" id="cobertura">
+  <p class="sec-label">Zona exclusiva</p>
+  <h2 class="sec-title">Cobertura en 6 estados<br>del sureste</h2>
+  <p class="sec-desc">Somos el único distribuidor autorizado de Kheir CE1300® en estos seis estados. Entrega directa y asesoría incluida con cada pedido.</p>
+  <div class="estados">
+    <div class="estado"><span class="estado-sub">Caribe Mexicano</span><div class="estado-name">Quintana Roo</div></div>
+    <div class="estado"><span class="estado-sub">Península de Yucatán</span><div class="estado-name">Yucatán</div></div>
+    <div class="estado"><span class="estado-sub">Península de Yucatán</span><div class="estado-name">Campeche</div></div>
+    <div class="estado"><span class="estado-sub">Sureste</span><div class="estado-name">Tabasco</div></div>
+    <div class="estado"><span class="estado-sub">Golfo de México</span><div class="estado-name">Veracruz</div></div>
+    <div class="estado"><span class="estado-sub">Sur de México</span><div class="estado-name">Oaxaca</div></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec">
+  <h2>¿Listo para mejorar<br>tus plantas o cultivos?</h2>
+  <p>Escríbenos hoy. Te asesoramos sin compromiso y te mandamos<br>la ficha técnica completa de Kheir CE1300®.</p>
+  <div class="cta-btns">
+    <a href="https://wa.me/529982418876?text=Hola%2C%20me%20interesa%20información%20sobre%20Kheir%20Sureste%20🌱" target="_blank" class="btn-wa">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Escribir por WhatsApp
+    </a>
+    <a href="#contacto" class="btn-outline">📋 Llenar formulario</a>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contacto-sec" id="contacto">
+  <div class="contacto-info">
+    <p class="sec-label">Contacto directo</p>
+    <h2>Hablemos<br>de tu proyecto</h2>
+    <p>Atendemos hoteles, viveros, desarrollos inmobiliarios y productores agrícolas en los 6 estados del sureste. Cuéntanos qué necesitas.</p>
+    <div class="datos">
+      <div class="dato">
+        <div class="dato-icon">📲</div>
+        <div><strong>WhatsApp</strong>998 241 8876</div>
+      </div>
+      <div class="dato">
+        <div class="dato-icon">📧</div>
+        <div><strong>Correo</strong>ventas@kheirsureste.com</div>
+      </div>
+      <div class="dato">
+        <div class="dato-icon">🌐</div>
+        <div><strong>Web</strong>kheirsureste.com</div>
+      </div>
+      <div class="dato">
+        <div class="dato-icon">📍</div>
+        <div><strong>Cobertura</strong>Quintana Roo · Yucatán · Campeche · Tabasco · Veracruz · Oaxaca</div>
+      </div>
+    </div>
+  </div>
+  <div class="form-box">
+    <h3>Solicita información</h3>
+    <div class="fg"><label>Nombre completo</label><input type="text" placeholder="Tu nombre"></div>
+    <div class="fg"><label>WhatsApp / Teléfono</label><input type="tel" placeholder="+52 000 000 0000"></div>
+    <div class="fg"><label>Correo electrónico</label><input type="email" placeholder="tu@correo.com"></div>
+    <div class="fg">
+      <label>Tipo de cliente</label>
+      <select>
+        <option value="">Selecciona una opción</option>
+        <option>Hotel o Resort</option>
+        <option>Vivero o Jardinero</option>
+        <option>Desarrollo Inmobiliario</option>
+        <option>Agricultor o Productor</option>
+        <option>Otro</option>
+      </select>
+    </div>
+    <div class="fg"><label>Estado</label>
+      <select>
+        <option value="">¿En qué estado estás?</option>
+        <option>Quintana Roo</option>
+        <option>Yucatán</option>
+        <option>Campeche</option>
+        <option>Tabasco</option>
+        <option>Veracruz</option>
+        <option>Oaxaca</option>
+      </select>
+    </div>
+    <div class="fg"><label>¿Qué necesitas?</label><textarea placeholder="Cuéntanos sobre tu proyecto o cultivo..."></textarea></div>
+    <button class="btn-form" onclick="enviarWA()">Enviar por WhatsApp →</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <img src="https://kheir.mx/wp-content/uploads/2020/02/Logo-Kheir-V2.webp" alt="Kheir" class="footer-logo">
+    <p>Distribuidores exclusivos del fertilizante líquido orgánico CE1300 Kheir® en el sureste de México. Producto 100% orgánico con más de 25 años de resultados comprobados.</p>
+  </div>
+  <div class="fcol">
+    <h4>Navegación</h4>
+    <ul>
+      <li><a href="#producto">El Producto</a></li>
+      <li><a href="#clientes">¿Para quién?</a></li>
+      <li><a href="#aplicacion">Cómo aplicar</a></li>
+      <li><a href="#cobertura">Cobertura</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </div>
+  <div class="fcol">
+    <h4>Cobertura</h4>
+    <ul>
+      <li><a href="#cobertura">Quintana Roo</a></li>
+      <li><a href="#cobertura">Yucatán</a></li>
+      <li><a href="#cobertura">Campeche</a></li>
+      <li><a href="#cobertura">Tabasco</a></li>
+      <li><a href="#cobertura">Veracruz</a></li>
+      <li><a href="#cobertura">Oaxaca</a></li>
+    </ul>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <p>© 2025 <span>Kheir Sureste</span> · Distribuidores Oficiales en el Sureste de México</p>
+  <p>Producto original: <span>kheir.mx</span></p>
+</div>
+
+<script>
+function toggleMenu(){
+  const links = document.querySelector('.nav-links');
+  links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
+  links.style.flexDirection = 'column';
+  links.style.position = 'absolute';
+  links.style.top = '72px';
+  links.style.left = '0';
+  links.style.right = '0';
+  links.style.background = 'rgba(13,31,16,0.98)';
+  links.style.padding = '20px';
+  links.style.gap = '16px';
+}
+
+function enviarWA(){
+  const nombre = document.querySelectorAll('.fg input')[0].value;
+  const tel = document.querySelectorAll('.fg input')[1].value;
+  const tipo = document.querySelectorAll('.fg select')[0].value;
+  const estado = document.querySelectorAll('.fg select')[1].value;
+  const msg = document.querySelector('.fg textarea').value;
+  const texto = `Hola, me interesa información sobre Kheir Sureste 🌱\n\nNombre: ${nombre}\nTeléfono: ${tel}\nTipo de cliente: ${tipo}\nEstado: ${estado}\nMensaje: ${msg}`;
+  window.open(`https://wa.me/529982418876?text=${encodeURIComponent(texto)}`, '_blank');
+}
+
+// Scroll suave para el nav
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('nav');
+  if(window.scrollY > 50){
+    nav.style.height = '62px';
+    nav.style.background = 'rgba(13,31,16,0.99)';
+  } else {
+    nav.style.height = '72px';
+    nav.style.background = 'rgba(13,31,16,0.97)';
+  }
+});
+
+// Animación de entrada
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+    }
+  });
+}, {threshold: 0.1});
+
+document.querySelectorAll('.ccard, .prop, .aplic-card, .estado, .precio-card').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(24px)';
+  el.style.transition = 'opacity .6s ease, transform .6s ease';
+  observer.observe(el);
+});
+</script>
+</body>
+</html>
